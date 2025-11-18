@@ -5,27 +5,26 @@ metadata:
   namespace: kong
 data:
   values.yaml: |
-    kong:
-      env:
-        database: "off"
+    env:
+      database: "off"
 
-      proxy:
-        type: NodePort
-        http:
-          enabled: true
-
-      ingressController:
+    proxy:
+      type: NodePort
+      http:
         enabled: true
-        ingressClass: kong
-        admissionWebhook:
-          enabled: false
 
-      autoscaling:
-        enabled: true
-        minReplicas: 1
-        maxReplicas: 1
+    ingressController:
+      enabled: true
+      ingressClass: kong
+      admissionWebhook:
+        enabled: false
 
-      resources:
-        limits:
-          cpu: 500m
-          memory: 512Mi
+    autoscaling:
+      enabled: true
+      minReplicas: 1
+      maxReplicas: 1
+
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
