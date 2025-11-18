@@ -1,7 +1,7 @@
 import asyncio
 
 HOST = "127.0.0.1"  # Change to the server's IP if not running locally
-PORT = 3000
+PORT = 58150
 BUFFER_SIZE = 1024
 
 async def send_message(reader, writer, message):
@@ -37,5 +37,6 @@ async def run_client():
     finally:
         print("Client disconnected.")
 
-if __name__ == "_main_":
-    asyncio.run(run_client())
+
+print("Starting Echo Client...")
+asyncio.run(run_client())
