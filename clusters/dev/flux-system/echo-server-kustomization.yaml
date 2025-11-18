@@ -11,7 +11,7 @@ spec:
     kind: GitRepository
     name: flux-system
   wait: true
+
   dependsOn:
-      - name: namespace
-      - name: kong
-    wait: true
+    - name: namespace
+    - name: kong
