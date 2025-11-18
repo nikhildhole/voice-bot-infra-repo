@@ -13,5 +13,5 @@ spec:
   wait: true
   dependsOn:
       - name: namespace
-      - name: infrastructure
+      - name: kong
     wait: true
