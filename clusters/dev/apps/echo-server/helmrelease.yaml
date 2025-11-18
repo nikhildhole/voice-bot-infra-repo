@@ -6,6 +6,7 @@ metadata:
 spec:
   interval: 5m
   releaseName: echo-server
+  targetNamespace: echo-server 
   chart:
     spec:
       chart: ./apps/echo-server
