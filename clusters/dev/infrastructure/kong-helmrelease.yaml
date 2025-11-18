@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: kong
+  namespace: kong
+spec:
+  interval: 5m
+  releaseName: kong
+  chart:
+    spec:
+      chart: ./infrastructure/kong
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system
+      interval: 1m
+  install:
+    createNamespace: false
+  upgrade:
+    remediation:
+      remediateLastFailure: true
+  valuesFrom:
+    - kind: ConfigMap
+      name: kong-values
+      valuesKey: values.yaml

@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kong-values
+  namespace: kong
+data:
+  values.yaml: |
+    kong:
+      env:
+        database: "off"
+
+      proxy:
+        type: LoadBalancer
+        http:
+          enabled: true
+        loadBalancerIP: "192.168.49.100"
+
+      ingressController:
+        enabled: true
+        ingressClass: kong
+        admissionWebhook:
+          enabled: false
+
+      autoscaling:
+        enabled: true
+        minReplicas: 1
+        maxReplicas: 2
+
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
