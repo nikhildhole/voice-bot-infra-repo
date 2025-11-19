@@ -28,6 +28,3 @@ data:
       limits:
         cpu: 500m
         memory: 512Mi
-
-    env:
-      KONG_STREAM_LISTEN: "0.0.0.0:9000"
