@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 5m
   prune: true
-  path: ./clusters/dev/infrastructure
+  path: ./clusters/dev/infrastructure/kong
   sourceRef:
     kind: GitRepository
     name: flux-system
