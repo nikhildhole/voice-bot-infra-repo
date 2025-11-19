@@ -9,6 +9,8 @@ data:
       database: "off"
 
     proxy:
+      stream:
+        enabled: true
       type: NodePort
       http:
         enabled: true
