@@ -25,6 +25,8 @@ data:
     ingressController:
       enabled: true
       ingressClass: kong
+      gateway:
+        enabled: true 
       admissionWebhook:
         enabled: false
 
