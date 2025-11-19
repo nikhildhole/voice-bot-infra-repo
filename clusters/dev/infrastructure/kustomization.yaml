@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - kong-helmrelease.yaml
   - kong-values.yaml
+  - gateway.yaml
