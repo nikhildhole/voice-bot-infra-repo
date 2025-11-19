@@ -12,21 +12,10 @@ data:
       type: NodePort
       http:
         enabled: true
-        servicePort: 80
-        containerPort: 8000
-      stream:
-        enabled: true
-        ports:
-          - name: tcp-audio
-            containerPort: 9000
-            servicePort: 9000
-            protocol: TCP
 
     ingressController:
       enabled: true
-      ingressClass: kong
-      gateway:
-        enabled: true 
+      ingressClass: kong 
       admissionWebhook:
         enabled: false
 
