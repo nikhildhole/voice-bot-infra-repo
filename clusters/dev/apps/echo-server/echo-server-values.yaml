@@ -10,3 +10,5 @@ data:
       tag: "latest"
     service:
       type: NodePort
+  image:
+    repository: nikhildhole/express-rest-demo
