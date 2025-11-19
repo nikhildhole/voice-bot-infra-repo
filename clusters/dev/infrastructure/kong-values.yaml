@@ -10,8 +10,17 @@ data:
 
     proxy:
       type: NodePort
+
       http:
         enabled: true
+
+      # --- ENABLE RAW TCP STREAMING ---
+      stream:
+        tcp:
+          - name: audio-stream
+            containerPort: 9000   # Kong listens on this port inside container
+            servicePort: 9000     # Exposed by the K8s Service
+            # nodePort: 32000     # (Optional) uncomment for fixed NodePort
 
     ingressController:
       enabled: true
