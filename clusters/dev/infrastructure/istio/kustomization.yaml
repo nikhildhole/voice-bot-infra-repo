@@ -1,0 +1,4 @@
+resources:
+  - istio-base.yaml
+  - istio-discovery.yaml
+  - istio-ingress.yaml
