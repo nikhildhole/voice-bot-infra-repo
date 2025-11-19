@@ -11,4 +11,4 @@ data:
     service:
       type: NodePort
     image:
-      repository: nikhildhole/express-rest-demo
+      repository: dbag34/demo-app
