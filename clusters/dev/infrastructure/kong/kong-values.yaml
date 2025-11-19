@@ -12,8 +12,6 @@ data:
       type: NodePort
       http:
         enabled: true
-      stream:
-        enabled: false
 
     ingressController:
       enabled: true
