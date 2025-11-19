@@ -1,7 +1,7 @@
 import asyncio
 
 HOST = "127.0.0.1"  # Change to the server's IP if not running locally
-PORT = 58150
+PORT = 52611
 BUFFER_SIZE = 1024
 
 async def send_message(reader, writer, message):

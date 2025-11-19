@@ -10,16 +10,8 @@ data:
 
     proxy:
       type: NodePort
-
       http:
         enabled: true
-
-      stream:
-        tcp:
-          audio-stream:
-            containerPort: 9000
-            servicePort: 9000
-            # nodePort: 32000
 
     ingressController:
       enabled: true
