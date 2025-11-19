@@ -4,3 +4,4 @@ resources:
   - kong-helmrelease.yaml
   - kong-values.yaml
   - gateway.yaml
+  - https://github.com/kubernetes-sigs/gateway-api/releases/latest/download/standard-install.yaml
