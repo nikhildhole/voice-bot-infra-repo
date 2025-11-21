@@ -1,0 +1,16 @@
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: TCPRoute
+metadata:
+  name: tcp-route
+  namespace: echo-server
+spec:
+  parentRefs:
+  - name: tcp-gw
+  rules:
+  - backendRefs:
+    - name: echo-server
+      port: 3000
+      weight: 80 
+    - name: echo-server-1 
+      port: 3000 
+      weight: 20

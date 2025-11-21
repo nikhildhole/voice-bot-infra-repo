@@ -1,0 +1,7 @@
+controller:
+  service:
+    type: NodePort
+    tcp:
+      "3000": 3000
+
+tcpServicesConfigMap: ingress-nginx/tcp-services

@@ -7,4 +7,3 @@ resources:
   - echo-server-namespace.yaml
   - voice-bot-3-namespace.yaml
   - kong-namespace.yaml
-  - istio-system-namespace.yaml

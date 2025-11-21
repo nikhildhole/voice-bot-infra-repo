@@ -1,0 +1,39 @@
+kubectl run nc --rm -it \
+  --image=busybox \
+  -- sh
+
+nc -vz echo-server.echo-server.svc.cluster.local 3000
+
+nc -vz 192.168.49.2 30582
+
+kubectl annotate gateway tcp-gw \
+  networking.istio.io/service-type=NodePort \
+  -n echo-server --overwrite
+
+
+kubectl get gateway tcp-gw -n echo-server -o yaml
+
+
+
+ helm upgrade istiod istio/istiod \
+  --namespace istio-system \
+  --set pilot.env.PILOT_ENABLE_ALPHA_GATEWAY_API=true
+
+
+helm install istio-base istio/base -n istio-system --create-namespace --wait
+
+kubectl get crd gateways.gateway.networking.k8s.io &> /dev/null || \
+  kubectl apply --server-side -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.4.0/experimental-install.yaml
+
+
+helm install istiod istio/istiod --namespace istio-system --set profile=ambient --wait
+
+helm install istio-cni istio/cni -n istio-system --set profile=ambient --wait
+
+helm install ztunnel istio/ztunnel -n istio-system --wait
+
+ minikube service tcp-gw-istio -n echo-server
+
+kubectl annotate gateway tcp-gw \
+  networking.istio.io/service-type=NodePort \
+  -n echo-server --overwrite
